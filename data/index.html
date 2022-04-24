@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<center>
+			LED state: <span id="ledState">%LED%</span>	<br><br>
+			<button id="ledSwitch" onclick=toggle(this)>Switch LED</button>
+			<br><br>
+			
+			Rain Sensor value: <span id="rainsensor">%RAINSENSOR%</span>
+			<br><br>
+			
+			Door state: <span id="doorState">%DOOR%</span> <br><br>
+			<button id="doorSwitch" onclick=toggle(this)>Switch Door</button>
+		</center>
+	</body>
+	<script>
+		function toggle(element) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/update?component="+element.id, true);
+			xhttp.send();
+		}
+		setInterval(function() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("ledState").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "/ledState", true);
+				xhttp.send();
+			}, 2000);
+		setInterval(function() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("rainsensor").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "/rainsensor", true);
+				xhttp.send();
+			}, 2000);
+		setInterval(function() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("doorState").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "/doorState", true);
+				xhttp.send();
+			}, 2000);
+	</script>
+</html>
