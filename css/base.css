@@ -1,0 +1,108 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body, input, button, textarea, select {
+    outline: none;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+}
+
+input {
+    line-height: normal;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    padding: 20px;
+    margin: 20px;
+}
+
+h1 {
+    color: #1E599A;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h3 {
+    color: #1E599A;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+label {
+    color: #1E599A;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+a, input {
+    font-size: 15px;
+    font-weight: bold;
+    color: #1E599A;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, input:focus {
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: linear 0.4s;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #0C539A;
+    border-radius: 10px;
+    font-size: 15px !important;
+}
+
+table th, table td {
+    padding: 15px 30px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table th {
+    font-weight: bold;
+    color: #364d67;
+    background-color: #ECF5F9;
+}
+
+table td {
+    background-color: white;
+}
+
+table tbody tr {
+    border-top: 1px solid #0C539A;
+}
+
+input.checkmark {
+    height: 20 px;
+    width: 50 px;
+}

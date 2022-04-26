@@ -1,20 +1,30 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<center>
+
+
+
+			<div class="container">
+  <div class="row">
+    <div class="col-sm">
 			LED state: <span id="ledState">%LED%</span>	<br><br>
-			<button id="ledSwitch" onclick=toggle(this)>Switch LED</button>
-			<br><br>
-			
+			<button class="btn btn-danger" id="ledSwitch" onclick=toggle(this)>Switch LED</button>
+    </div>
+    <div class="col-sm">
+						Door state: <span id="doorState">%DOOR%</span> <br><br>
+			<button class="btn btn-warning" id="doorSwitch" onclick=toggle(this)>Switch Door</button>
+    </div>
+    <div class="col-sm">
 			Rain Sensor value: <span id="rainsensor">%RAINSENSOR%</span>
-			<br><br>
-			
-			Door state: <span id="doorState">%DOOR%</span> <br><br>
-			<button id="doorSwitch" onclick=toggle(this)>Switch Door</button>
-		</center>
+    </div>
+  </div>
+
 	</body>
 	<script>
 		function toggle(element) {
